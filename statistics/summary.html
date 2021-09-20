@@ -147,12 +147,9 @@
         url = "https://api.matthewfbailey.com/summaryStatistics"
         xhttp.open("GET", url, true);
         xhttp.setRequestHeader(
-            "Access-Control-Allow-Origin", "*"
+            "Content-Type", "application/x-www-form-urlencoded"
         )
-        xhttp.send(
-            {"nums":nums,
-            "delim":delim}
-        );
+        xhttp.send();
 
         function myFunction(xhttp) {
             alert(xhttp.responseText);
