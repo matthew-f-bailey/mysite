@@ -145,9 +145,9 @@
             }
         };
         url = "https://api.matthewfbailey.com/summaryStatistics"
-        xhttp.open("POST", url, true);
+        xhttp.open("GET", url, true);
         xhttp.setRequestHeader(
-            "Access-Control-Allow-Origin", true
+            "Access-Control-Allow-Origin", "*"
         )
         xhttp.send(
             {"nums":nums,
