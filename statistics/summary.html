@@ -145,6 +145,8 @@
             }
         };
         url = "https://api.matthewfbailey.com/summaryStatistics"
+        url += "?nums="+nums
+        url += "&delim="+delim
         xhttp.open("GET", url, true);
         xhttp.setRequestHeader(
             "Content-Type", "application/x-www-form-urlencoded"
