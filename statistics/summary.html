@@ -187,15 +187,14 @@
         xhttp.send();
 
         function myFunction(xhttp) {
-            alert(xhttp.responseText);
-            res = JSON.parse(xhttp.responseText)
-            document.getElementById("len").value = res.len
-            document.getElementById("min").value = res.min
-            document.getElementById("med").value = res.median
-            document.getElementById("max").value = res.max
-            document.getElementById("sum").value = res.sum
-            document.getElementById("mean").value = res.mean
-            document.getElementById("dev").value = res.dev
+            res = JSON.parse(xhttp.responseText);
+            document.getElementById("len").value = res.len;
+            document.getElementById("min").value = res.min;
+            document.getElementById("med").value = res.median;
+            document.getElementById("max").value = res.max;
+            document.getElementById("sum").value = res.sum;
+            document.getElementById("mean").value = res.mean;
+            document.getElementById("dev").value = res.dev;
         }
     }
   </script>
