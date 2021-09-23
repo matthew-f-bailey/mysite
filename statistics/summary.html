@@ -107,10 +107,31 @@
               <div class="text-center"><button onclick="getSummary()">Get Summary Statistics</button></div>
             </div>
           </div>
-      </div>
-      <div class="container">
-        <input type="text" id="mean">
-        <label for="mean">Mean</label>
+          <!-- Update values -->
+          <div class="container">
+
+            <input type="text" id="len" disabled>
+            <label for="len">Length</label>
+
+            <input type="text" id="min" disabled>
+            <label for="min">Minimum Value</label>
+
+            <input type="text" id="med" disabled>
+            <label for="med">Median Value</label>
+
+            <input type="text" id="max" disabled>
+            <label for="max">Maximum Value</label>
+
+            <input type="text" id="sum" disabled>
+            <label for="sum">Sum</label>
+
+            <input type="text" id="mean" disabled>
+            <label for="mean">Mean</label>
+
+            <input type="text" id="dev" disabled>
+            <label for="dev">Standard Deviation</label>
+
+          </div>
       </div>
     </section>
 
@@ -159,8 +180,14 @@
 
         function myFunction(xhttp) {
             alert(xhttp.responseText);
-            res = JSON.loads(xhttp.responseText)
+            res = JSON.parse(xhttp.responseText)
+            document.getElementById("len").value = res.len
+            document.getElementById("min").value = res.min
+            document.getElementById("med").value = res.median
+            document.getElementById("max").value = res.max
+            document.getElementById("sum").value = res.sum
             document.getElementById("mean").value = res.mean
+            document.getElementById("dev").value = res.dev
         }
     }
   </script>
