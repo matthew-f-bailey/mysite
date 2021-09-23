@@ -137,6 +137,16 @@
         nums = document.getElementById("numbers").value;
         delim = document.querySelector('input:checked').value;
 
+        // Force everything into comma
+        if (delim=="line") {
+          nums=nums.replaceAll("\n", ",");
+          delim = "comma";
+        }
+        if (delim=="tab") {
+          nums=nums.replaceAll("\t", ",");
+          delim = "comma";
+        }
+
         var xhttp;
         xhttp=new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
