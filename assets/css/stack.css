@@ -1,0 +1,17 @@
+div.stacklist{
+    margin-bottom: 100px;
+    font-size: larger;
+}
+div.stack-entry{
+    margin-top: 10px;
+}
+span.icon-desc{
+    margin-left: 10px;
+}
+div.icon{
+    font-size: 48px;
+    display: inline;
+}
+.title{
+    font-size: xx-large;
+}
