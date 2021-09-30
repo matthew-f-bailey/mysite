@@ -85,7 +85,7 @@
             key: "registerEventListeners",
             value: function () {
               var e = this,
-                t = document.querySelectorAll(".purecounterMod");
+                t = document.querySelectorAll(".purecounter");
               if (this.intersectionListenerSupported())
                 for (
                   var n = new IntersectionObserver(
@@ -164,7 +164,7 @@
                     i != t.end &&
                       (e.innerHTML =
                         t.decimals <= 0
-                          ? parseInt(1)
+                          ? parseInt(t.end)
                           : parseFloat(t.end).toFixed(t.decimals)));
               }, t.delay);
             },

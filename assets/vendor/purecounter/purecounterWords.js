@@ -85,7 +85,7 @@
             key: "registerEventListeners",
             value: function () {
               var e = this,
-                t = document.querySelectorAll(".purecounterMod");
+                t = document.querySelectorAll(".purecounterWords");
               if (this.intersectionListenerSupported())
                 for (
                   var n = new IntersectionObserver(
@@ -162,10 +162,7 @@
                     (i <= t.end && "dec" == a)) &&
                     (clearInterval(o),
                     i != t.end &&
-                      (e.innerHTML =
-                        t.decimals <= 0
-                          ? parseInt(1)
-                          : parseFloat(t.end).toFixed(t.decimals)));
+                      (e.innerHTML = "Too Many"));
               }, t.delay);
             },
           },
