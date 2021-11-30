@@ -26,7 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/cards.css" rel="stylesheet">
+  <link href="assets/css/loader.css" rel="stylesheet">
 
 </head>
 
@@ -67,10 +67,11 @@
   </header><!-- End Header -->
 
   <main id="main">
-      <div id="beers" class="container">
+      <div id="beers" class="container-fluid">
+        <div id="spinner" class="loader centered">
 
+        </div>
       </div>
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -98,6 +99,7 @@
         xhttp=new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("spinner").style.display = "none";
                 append_table(this);
             }
         };
