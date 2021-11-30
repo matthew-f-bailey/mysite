@@ -107,8 +107,8 @@
 
         function append_table(xhttp) {
             document.getElementById("beers").innerHTML = xhttp.responseText;
-            table = document.querySelector("#beers table table-responsive");
-            table.className = "table table-hover";
+            table = document.querySelector("#beers table");
+            table.className = "table table-hover table-responsive";
         }
     }
   </script>
