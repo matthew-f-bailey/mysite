@@ -30,7 +30,7 @@
 
 </head>
 
-<body onload="append_table()">
+<body onload="get_beers()">
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -73,116 +73,7 @@
     </div>
     <hr>
     <div id="beers" class="container-fluid well">
-      <table border="1" class="dataframe">
-        <thead>
-          <tr style="text-align: right;">
-            <th></th>
-            <th>name</th>
-            <th>style</th>
-            <th>brewery</th>
-            <th>full_name</th>
-            <th>description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>0</th>
-            <td>Amber</td>
-            <td>Altbier</td>
-            <td>Alaskan Brewing Co.</td>
-            <td>Alaskan Brewing Co. Alaskan Amber</td>
-            <td>Notes:Richly malty and long on the palate, with just enough hop backing to make this beautiful amber colored "alt" style beer notably well balanced.\t</td>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>Double Bag</td>
-            <td>Altbier</td>
-            <td>Long Trail Brewing Co.</td>
-            <td>Long Trail Brewing Co. Double Bag</td>
-            <td>Notes:This malty, full-bodied double alt is also known as “Stickebier” – German slang for “secret brew”. Long Trail Double Bag was originally offered only in our brewery taproom as a special treat to our visitors. With an alcohol content of 7.2%, please indulge in moderation. The Long Trail Brewing Company is proud to have Double Bag named Malt Advocate’s “Beer of the Year” in 2001. Malt Advocate is a national magazine devoted to “expanding the boundaries of fine drinks”. Their panel of judges likes to keep things simple, and therefore of thousands of eligible competitors they award only two categories: “Imported” and “Domestic”. It is a great honor to receive this recognition.33 IBU\t</td>
-          </tr>
-          <tr>
-            <th>2</th>
-            <td>Long Trail Ale</td>
-            <td>Altbier</td>
-            <td>Long Trail Brewing Co.</td>
-            <td>Long Trail Brewing Co. Long Trail Ale</td>
-            <td>Notes:Long Trail Ale is a full-bodied amber ale modeled after the “Alt-biers” of Düsseldorf, Germany. Our top fermenting yeast and cold finishing temperature result in a complex, yet clean, full flavor. Originally introduced in November of 1989, Long Trail Ale beer quickly became, and remains, the largest selling craft-brew in Vermont. It is a multiple medal winner at the Great American Beer Festival.25 IBU\t</td>
-          </tr>
-          <tr>
-            <th>3</th>
-            <td>Doppelsticke</td>
-            <td>Altbier</td>
-            <td>Uerige Obergärige Hausbrauerei GmbH / Zum Uerige</td>
-            <td>Uerige Obergärige Hausbrauerei GmbH / Zum Uerige Uerige Doppelsticke</td>
-            <td>Notes:</td>
-          </tr>
-          <tr>
-            <th>4</th>
-            <td>Sleigh'r Dark Doüble Alt Ale</td>
-            <td>Altbier</td>
-            <td>Ninkasi Brewing Company</td>
-            <td>Ninkasi Brewing Company Sleigh'r Dark Doüble Alt Ale</td>
-            <td>Notes:Called 'Dark Double Alt' on the label.Seize the season with Sleigh'r. Layers of deeply toasted malt are balanced by just enough hop bitterness to make it deceivingly drinkable. Paired with a dry finish, Sleigh’r is anything but your typical winter brew.An Alt ferments with Ale yeast at colder lagering temperatures. This effect gives Alts a more refined, crisp lager-like flavor than traditional ales. The Alt has been “Ninkasified” raising the ABV and IBUs. Sleigh'r has a deep, toasted malt flavor that finishes dry and balanced.50 IBU\t</td>
-          </tr>
-          <tr>
-            <th>5</th>
-            <td>Sticke</td>
-            <td>Altbier</td>
-            <td>Uerige Obergärige Hausbrauerei GmbH / Zum Uerige</td>
-            <td>Uerige Obergärige Hausbrauerei GmbH / Zum Uerige Uerige Sticke</td>
-            <td>Notes:</td>
-          </tr>
-          <tr>
-            <th>6</th>
-            <td>Okto Festival Ale</td>
-            <td>Altbier</td>
-            <td>Widmer Brothers Brewing Company</td>
-            <td>Widmer Brothers Brewing Company Okto</td>
-            <td>Notes:Classified as a German Altbier by the Widmer Brothers; brewed with an (ale) Alt yeast strain.availability: early Aug. - late Oct.bitterness : 28 IBUoriginal gravity: 13.5° PLATO\t</td>
-          </tr>
-          <tr>
-            <th>7</th>
-            <td>Southampton Altbier</td>
-            <td>Altbier</td>
-            <td>Southampton Publick House</td>
-            <td>Southampton Publick House Southampton Altbier</td>
-            <td>Notes:</td>
-          </tr>
-          <tr>
-            <th>8</th>
-            <td>Copper</td>
-            <td>Altbier</td>
-            <td>The Olde Mecklenburg Brewery</td>
-            <td>The Olde Mecklenburg Brewery OMB Copper</td>
-            <td>Notes:OMB’s flagship, Copper, is an authentic Düsseldorf style “Altbier” or Amber Ale. There are no crazy flavors or gimmicks with Copper – its full-flavored start transitions to a smooth, balanced, easy-drinking finish. It’s the beer that tastes like beer.\t</td>
-          </tr>
-          <tr>
-            <th>9</th>
-            <td>Organic Münster Alt</td>
-            <td>Altbier</td>
-            <td>Brauerei Pinkus Mueller</td>
-            <td>Brauerei Pinkus Mueller Organic Münster Alt</td>
-            <td>Notes:</td>
-          </tr>
-          <tr>
-            <th>10</th>
-            <td>Altbier</td>
-            <td>Altbier</td>
-            <td>Uerige Obergärige Hausbrauerei GmbH / Zum Uerige</td>
-            <td>Uerige Obergärige Hausbrauerei GmbH / Zum Uerige Uerige Altbier (Classic)</td>
-            <td>Notes:Uerige Alt is the most bittered beer in Germany. In spite of this (or just for that reason), this legendary Altbier from Düsseldorf is so full-bodied, aromatic and wholesome.Our top-fermented specialty has been brewed since 1862 from barley malt, caramel malt, roasted malt, hops, water - and with our very special Uerige yeast.Our Uerige Alt is regularly chosen among the ten best beers in Germany. It has an alcohol content of 4.7% and a minimum fresh date of eight weeks.Unser Uerige Alt wird regelmäßig unter die zehn besten Biere Deutschlands gewählt. Es hat einen Alkoholgehalt von 4, 7% und ein Mindestfrischedatum von acht Wochen.\t</td>
-          </tr>
-          <tr>
-            <th>11</th>
-            <td>Gerst Amber</td>
-            <td>Altbier</td>
-            <td>Yazoo Brewing Company</td>
-            <td>Yazoo Brewing Company Gerst Amber</td>
-            <td>Notes:Check out a piece of Nashville brewing history! Gerst Brewery was the original Nashville brewery, but never recovered after prohibition. We are excited to partner with the Chandler Family, owners of the Gerst Haus Restaurant, to bring this beer back right where it belongs – Nashville, Tennessee.This is a very “clean” beer, with mostly German malts and a hint of flaked maize, remaining as true as possible to the original Gerst recipe.11 IBUs\t</td>
-          </tr>
-        </tbody>
-      </table>
+
     </div>
     <div id="form-container">
       <button type="button" class="btn btn-primary" onclick="recommend_beer()">Recommend</button>
