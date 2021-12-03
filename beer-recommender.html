@@ -213,18 +213,22 @@
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script>
-    function append_table(xhttp) {
-            //document.getElementById("beers").innerHTML = xhttp.responseText;
-            table = document.querySelector("#beers table");
-            table.className = "table table-hover table-responsive";
-            var ths = document.querySelectorAll("#beers table tbody tr th");
-            for (let i = 0; i < ths.length; i++) {
-              var element = document.createElement("input");
-              element.type = "checkbox";
-              ths[i].innerText = "";
-              ths[i].appendChild(element);
-            }
-        }
+    function append_table(xhttp){
+      document.getElementById("beers").innerHTML = xhttp.responseText;
+      table = document.querySelector("#beers table");
+      table.className = "table table-hover table-responsive";
+      var ths = document.querySelectorAll("#beers table tbody tr th");
+      for (let i = 0; i < ths.length; i++) {
+        var element = document.createElement("input");
+        element.type = "checkbox";
+        ths[i].innerText = "";
+        ths[i].appendChild(element);
+      }
+    }
+    function append_rec(xhttp) {
+      alert("Appending Rec");
+      alert(xhttp.responseText);
+    }
     function get_beers(){
         var xhttp;
         xhttp=new XMLHttpRequest();
@@ -238,9 +242,37 @@
         xhttp.open("GET", url, true);
         xhttp.send();
     }
-    function recommend_beer() {
-      alert("Recommending...");
+
+    function recommend_beer(){
+        document.getElementById("spinner").style.display = "block";
+        var xhttp;
+        xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("spinner").style.display = "none";
+              append_rec(this);
+            }
+        };
+        url = "https://api.matthewfbailey.com/beer-recommend"
+        xhttp.open("POST", url, true);
+
+        var all_checked = []
+        var checkedBoxes = document.querySelectorAll('input:checked');
+        for (let i=0; i<checkedBoxes.length; i++){
+          let tablerow = checkedBoxes[i].parentElement.parentElement
+          let name = tablerow.getElementsByTagName("td")[0].innerText;
+          let style = tablerow.getElementsByTagName("td")[1].innerText;
+          let brewery = tablerow.getElementsByTagName("td")[2].innerText;
+          let full_name = tablerow.getElementsByTagName("td")[3].innerText;
+          all_checked.push({"name": name, "style": style, "brewery": brewery, "full_name": full_name});
+        }
+        payload = JSON.stringify(all_checked);
+        console.log(payload);
+
+        xhttp.send(payload);
+
     }
+
   </script>
   </script>
 
