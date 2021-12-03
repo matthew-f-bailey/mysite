@@ -78,6 +78,7 @@
     <div id="form-container">
       <button type="button" class="btn btn-primary" onclick="recommend_beer()">Recommend</button>
     </div>
+    <div>Your Recommended Beer:</div>
     <div id="recommended">
 
     </div>
@@ -117,8 +118,9 @@
       }
     }
     function append_rec(xhttp) {
-      alert("Appending Rec");
-      alert(xhttp.responseText);
+      document.getElementById("recommended").innerHTML = xhttp.responseText;
+      table = document.querySelector("#recommended table");
+      table.className = "table table-hover table-responsive";
     }
     function get_beers(){
         var xhttp;
