@@ -155,18 +155,6 @@
     }
 
     function recommend_beer(){
-        document.getElementById("spinner").style.display = "block";
-        var xhttp;
-        xhttp=new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("spinner").style.display = "none";
-              append_rec(this);
-            }
-        };
-        url = "https://api.matthewfbailey.com/beer-recommend"
-        xhttp.open("POST", url, true);
-
         var all_checked = []
         var checkedBoxes = document.querySelectorAll('input:checked');
         for (let i=0; i<checkedBoxes.length; i++){
@@ -178,8 +166,22 @@
           all_checked.push({"name": name, "style": style, "brewery": brewery, "full_name": full_name});
         }
         payload = JSON.stringify(all_checked);
+        if (all_checked.length==0){
+          alert("Select something...");
+          return False
+        }
         console.log(payload);
-
+        document.getElementById("spinner").style.display = "block";
+        var xhttp;
+        xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("spinner").style.display = "none";
+              append_rec(this);
+            }
+        };
+        url = "https://api.matthewfbailey.com/beer-recommend"
+        xhttp.open("POST", url, true);
         xhttp.send(payload);
 
     }
