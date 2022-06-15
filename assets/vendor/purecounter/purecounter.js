@@ -1,3 +1,4 @@
+let job_num = 2;
 !(function (e) {
   var t = {};
   function n(r) {
@@ -164,7 +165,7 @@
                     i != t.end &&
                       (e.innerHTML =
                         t.decimals <= 0
-                          ? parseInt(1)
+                          ? parseInt(job_num) // HARDCODED JOB NUMBER - I'm lazy
                           : parseFloat(t.end).toFixed(t.decimals)));
               }, t.delay);
             },
