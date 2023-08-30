@@ -23,9 +23,12 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/chatbot.css" rel="stylesheet">
 
 </head>
 
@@ -226,7 +229,7 @@
             </div>
             <div class="resume-item">
               <h4>Application Developer - Greenphire</h4>
-              <h5>2022 - Present</h5>
+              <h5>2022</h5>
               <p><em>King of Prussia, Pennsylvania</em></p>
               <p>Web Development and Sustaining Engineering</p>
               <ul>
@@ -239,7 +242,7 @@
             </div>
             <div class="resume-item">
               <h4>Data Acquisition Engineer - Medpro Systems</h4>
-              <h5>2019 - Present</h5>
+              <h5>2018 - 2022</h5>
               <p><em>Mount Arlington, NJ</em></p>
               <p>Responsibilities included systems design, ETL pipeline development, and web scraping at scale</p>
               <ul>
@@ -479,6 +482,83 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <div id="body" style="position: absolute; z-index: 99999" >
+
+
+      <!--button-->
+      <div id="chat-circle" class="btn btn-raised">
+          <div id="chat-overlay"></div>
+          <!--<i class="material-icons">android</i>-->
+          <img class="chat-circle_robot" src="https://cdn.iconscout.com/icon/free/png-256/robot-86-404724.png">
+      </div>
+
+      <!--chat-bot-->
+      <div class="chat-box">
+          <div class="chat-box-body">
+              <!--welcome message-->
+              <div class="chat-box-welcome__header">
+                  <div class="chat-box__header-text">
+                      <p3 class="chat-box-welcome__company-name">ChatBot</p3>
+                      <span class="chat-box-toggle"><i class="material-icons">cancel</i></span>
+                  </div>
+
+                  <div id="chat-box-welcome__ava">
+                      <!--<i class="material-icons">android</i>-->
+                      <img class="chat-box-welcome_robot" src="https://cdn.iconscout.com/icon/free/png-256/robot-86-404724.png">
+                  </div>
+                  <div class="chat-box-welcome__welcome-text">
+                      <p>Hi! I'm ChatBot IDA, what can I assist you with?</p>
+                  </div>
+                  <!--<div id="chat">
+
+                  </div>-->
+              </div>
+
+              <!--chat-bot after welcome was toggled-->
+              <div id="chat-box__wraper">
+                  <div class="chat-box-header">
+                      ChatBot
+                      <span class="chat-box-toggle"><i class="material-icons">cancel</i></span>
+                  </div>
+
+                  <div class="chat-box-overlay">
+                  </div>
+                  <div class="chat-logs">
+                      <div id="cm-msg-0" class="chat-msg bot">
+                          <span class="msg-avatar">
+                    <!--<i class="material-icons">android</i>-->
+                    <img class="chat-box-overlay_robot" src="https://cdn.iconscout.com/icon/free/png-256/robot-86-404724.png">
+                    </span>
+                          <div class="cm-msg-text">
+                              Hi! I'm ChatBot IDA, what can I assist you with?
+                          </div>
+                      </div>
+                      <!--<div class="text-center"><p>loader 1</p><div class="loader1"></div></div>-->
+                      <div class="spin-container">
+                          <div class="spiner">
+                              <div aria-hidden="true"></div>
+                              <div aria-hidden="true"></div>
+                              <div aria-hidden="true"></div>
+                          </div>
+                      </div>
+
+                  </div>
+                  <!--chat-log-->
+              </div>
+
+          </div>
+          <div class="chat-input-box" id="chatLog">
+              <form class="chat-input__form">
+                <input type="text" class="chat-input__text" id="chat-input__text" placeholder="Send a message..." />
+                  <button type="submit" class="chat-submit" id="chat-submit">
+                    <i class="material-icons">send</i>
+                </button>
+              </form>
+              <p6 class="chat-box__sign">...</p6>
+          </div>
+      </div>
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -490,9 +570,11 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/chatbot.js"></script>
 
 </body>
 
