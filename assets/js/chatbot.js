@@ -112,12 +112,7 @@ async function fetchAnswer() {
     };
     const response = await fetch(url, params)
     let res = await response.text();
-    try {
-        data = JSON.parse(res);
-      } catch (error) {
-        console.error(error);
-        data = res;
-      }
+    let data = res;
 
     data = JSON.parse(data);
 
