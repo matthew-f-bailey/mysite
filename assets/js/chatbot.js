@@ -111,10 +111,7 @@ async function fetchAnswer() {
         method: "POST"
     };
     const response = await fetch(url, params)
-    let res = await response.text();
-    let data = res;
-
-    data = JSON.parse(data);
+    let data = await response.text();
 
     hist.push({"role": "assistant", "content": data});
     $('.chat-logs').append('<div class="msg-row row"><div class="cm-msg-text">' + data + '</div><span class="justify-content-center align-items-center msg-avatar"></span></div>');
