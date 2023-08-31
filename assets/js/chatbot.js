@@ -111,7 +111,14 @@ async function fetchAnswer() {
         method: "POST"
     };
     const response = await fetch(url, params)
-    let data = await response.text();
+    let res = await response.text();
+    try {
+        data = JSON.parse(res);
+      } catch (error) {
+        console.error(error);
+        data = res;
+      }
+
     data = JSON.parse(data);
 
     hist.push({"role": "assistant", "content": data});
