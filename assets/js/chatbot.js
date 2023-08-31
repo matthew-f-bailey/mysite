@@ -1,3 +1,4 @@
+
 var botController = (function () {
 
 
@@ -101,33 +102,37 @@ var controller = (function (botCntr, uiCntr) {
 
 })(botController, uiController);
 
+async function fetchAnswer() {
+    url = "https://api.matthewfbailey.com/chatbot-api";
+    url = "http://localhost:9000/2015-03-31/functions/function/invocations";
+    console.log(hist);
+    params = {
+        headers: {},
+        body: JSON.stringify(hist),
+        method: "POST"
+    };
+    const response = await fetch(url, params)
+    let data = await response.text();
+    data = JSON.parse(data);
+
+    hist.push({"role": "assistant", "content": data});
+    $('.chat-logs').append('<div class="msg-row row"><div class="cm-msg-text">' + data + '</div><span class="justify-content-center align-items-center msg-avatar"></span></div>');
+
+}
 
 $('.chat-input__form').on('submit', function (e) {
     e.preventDefault();
     msg = $('.chat-input__text').val();
 
-    $('.chat-logs').append('<div id="cm-msg-0" class="chat-msg background-warning push-right bot"><div class="cm-msg-text">' + msg + '</div><span class="msg-avatar"><img class="chat-box-overlay_robot" src="https://www.meetsource.com//userStyles/images/user.png"></span></div>');
-    $('.chat-input__text').val('');
-    hist.push({"role": "user", "content": msg});
-    console.log(hist);
+    if (msg != "") {
+        $('.chat-logs').append('<div class="msg-row row float-right"><div style="background: #1982FC; color: white" class="cm-msg-text">' + msg + '</div><span class="justify-content-center align-items-center msg-avatar"></span></div>');
+        $('.chat-input__text').val('');
+        hist.push({"role": "user", "content": msg});
+        console.log(hist);
 
-    url = "https://api.matthewfbailey.com/chatbot-api";
-    params = {
-        headers: {},
-        body: hist,
-        method: "POST"
-    };
-    fetch(url, params).then(
-        data=>{
-            hist.push({"role": "assistant", "content": data});
-            $('.chat-logs').append('<div id="cm-msg-0" class="chat-msg background-warning push-right bot"><div class="cm-msg-text">' + msg + '</div><span class="msg-avatar"><img class="chat-box-overlay_robot" src="https://www.meetsource.com//userStyles/images/user.png"></span></div>');
-            return data
-        }
-    ).then(
-        res=>{console.log(res)}
-    ).then(
-        error=>{console.log(error)}
-    );
+        fetchAnswer()
+    }
+
 });
 
 

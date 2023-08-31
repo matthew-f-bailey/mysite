@@ -79,6 +79,10 @@ body {
     background-image: linear-gradient( to bottom right, rgba(168, 224,  99, 1), rgba(246, 72, 72, 1));
 }
 
+.msg-row{
+    width: fit-content;
+}
+
 .options-btn {
     border: 1px solid rgba(246, 72, 72, 1);
 }
