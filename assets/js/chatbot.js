@@ -104,7 +104,6 @@ var controller = (function (botCntr, uiCntr) {
 
 async function fetchAnswer() {
     url = "https://api.matthewfbailey.com/chatbot-api";
-    url = "http://localhost:9000/2015-03-31/functions/function/invocations";
     console.log(hist);
     params = {
         headers: {},
